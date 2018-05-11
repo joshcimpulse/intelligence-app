@@ -1,0 +1,11 @@
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\bin\Debug\netcoreapp2.0\reportApp.deps.json
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\bin\Debug\netcoreapp2.0\reportApp.runtimeconfig.json
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\bin\Debug\netcoreapp2.0\reportApp.runtimeconfig.dev.json
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\bin\Debug\netcoreapp2.0\reportApp.dll
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\bin\Debug\netcoreapp2.0\reportApp.pdb
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.csproj.CoreCompileInputs.cache
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.AssemblyInfoInputs.cache
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.AssemblyInfo.cs
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.dll
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.pdb
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\obj\Debug\netcoreapp2.0\reportApp.csprojResolveAssemblyReference.cache

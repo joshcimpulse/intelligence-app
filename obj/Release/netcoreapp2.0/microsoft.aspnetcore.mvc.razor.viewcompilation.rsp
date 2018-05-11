@@ -1,0 +1,10 @@
+C:\Users\jcaravaggio\Desktop\impulseSource\reportApp
+--output-path=obj\Release\netcoreapp2.0\
+--application-name=reportApp
+--content-root=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\Home\Index.cshtml
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\Shared\Error.cshtml
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\Shared\_Layout.cshtml
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\_ViewImports.cshtml
+--file=C:\Users\jcaravaggio\Desktop\impulseSource\reportApp\Views\_ViewStart.cshtml

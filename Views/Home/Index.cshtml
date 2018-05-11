@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @using Microsoft.AspNetCore.Authorization
+    @inject IAuthorizationService AuthorizationService
+}
+<div class = "container" style = "padding-top: 30px">
+
+
+<form id = "timeFrame">
+    <input>
+
+</form>
+
+<script>
+    
+    console.log(@ViewBag.Identity);    
+</script>
+</div>
