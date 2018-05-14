@@ -14,13 +14,19 @@ namespace reportApp.Models
         public float totalGP;
 
 
-        public List<Sale> retrieveSales() {
+        private List<Sale> retrieveSalesByDate() {
 
 
 
 
         }
+        private List<string> retrieveSalesByDate()
+        {
 
+
+
+
+        }
         public float computeVolume()
         {
 
