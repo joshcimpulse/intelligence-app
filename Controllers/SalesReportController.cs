@@ -8,9 +8,14 @@ namespace reportApp.Controllers
 {
     public class SalesReportController : Controller
     {
-        public IActionResult Index()
+        public IActionResult SelectParam()
         {
             return View();
         }
+        public IActionResult Report()
+        {
+            return View();
+        }
+
     }
 }
