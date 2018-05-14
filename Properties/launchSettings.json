@@ -11,6 +11,7 @@
     "iisExpress": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "default",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

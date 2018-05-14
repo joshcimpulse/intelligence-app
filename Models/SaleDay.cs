@@ -21,6 +21,7 @@ namespace reportApp.Models
         public List<string> retrieveSorNumbers() {
 
             //await querySale task
+           
 
 
         }

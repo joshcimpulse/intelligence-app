@@ -6,8 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace reportApp.Controllers
 {
-    public class SalesReportController : Controller
+
+    public class SalesReportInterfaceController : Controller
     {
+
         public IActionResult SelectParam()
         {
             return View();
