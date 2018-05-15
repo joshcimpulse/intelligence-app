@@ -19,7 +19,7 @@ namespace reportApp.Models
         
             Constructor for a SaleLine given the data retrieved from the superior Sale's querySalesLines method
              
-        */
+
         public SaleLine(string stockCode, string stockDescription, float orderQty, float unitCost)
         {
 
@@ -39,6 +39,6 @@ namespace reportApp.Models
 
 
         }
-
+        */
     }
 }

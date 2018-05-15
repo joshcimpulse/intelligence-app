@@ -8,6 +8,7 @@ namespace reportApp.Models
     public class RetrieveSaleDataException : Exception
     {
 
+        /*
         public RetrieveSaleDataException()
         {
 
@@ -23,6 +24,6 @@ namespace reportApp.Models
 
 
         }
-
+        */
     }
 }

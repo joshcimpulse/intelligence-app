@@ -1,8 +1,48 @@
 ﻿
 @{
-    ViewData["Title"] = "SelectParam";
+    ViewData["Title"] = "Select Report Month" +
+                "";
 }
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+<div class="container">
+    <h2>Select Date Parameters</h2>
 
-<h2>SelectParam</h2>
+    <p>Please select a year and month for your automated sales report.</p>
+    <div class="row">
+        <div class="col-md-2">
+            <label>Select Year</label>
+            <select id="yearSelect">
+                @for (var i = 2005; i <= (int)DateTime.Now.Year; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <label>Select Month</label>
+            <select id="monthSelect">
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
 
-<p>Please select a beginning and end date for your automated sales report</p>
+            </select>
+        </div>
+    </div>
+    <br /> <br />
+    
+
+    <button id="submit">Submit</button>
+</div>
+<br /> <br />
+<br /> <br />
+
+

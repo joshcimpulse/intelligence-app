@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using reportApp.Models;
 using Microsoft.AspNetCore.Identity;
-using ObjectDumper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 namespace reportApp.Controllers

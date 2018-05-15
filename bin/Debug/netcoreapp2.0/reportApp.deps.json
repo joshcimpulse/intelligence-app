@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "fe127950c155e5c4cbb1f4aa8191d2f97b3a4809"
+    "signature": "5d4f296dcb6e022874d528835428d9c333078db7"
   },
   "compilationOptions": {
     "defines": [
@@ -28,8 +28,7 @@
           "Microsoft.AspNetCore.Http.Abstractions": "2.0.3",
           "Microsoft.AspNetCore.Session": "2.0.3",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
-          "ObjectDumper": "1.0.0.12"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3"
         },
         "runtime": {
           "reportApp.dll": {}
@@ -2504,14 +2503,6 @@
         },
         "compile": {
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
-        }
-      },
-      "ObjectDumper/1.0.0.12": {
-        "runtime": {
-          "lib/net35-Client/ObjectDumper.dll": {}
-        },
-        "compile": {
-          "lib/net35-Client/ObjectDumper.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -5473,13 +5464,6 @@
       "sha512": "sha512-WCkN68c8q+USG+Ot1MmBDH+9DUo5dk7UB0QDMiwCYhrH7ZoFLKFGGNzJ8C3LTR1DvB1LW9BOxKeznnZznKiCTA==",
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
-    },
-    "ObjectDumper/1.0.0.12": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-APCoQT264RI7QwFyRp9VghFCQCnnH1zE3EIDcEHNa3l3jmLsZeRuyCs1h77/Rj8AKx/V708W3bE/klf0QG3NAQ==",
-      "path": "objectdumper/1.0.0.12",
-      "hashPath": "objectdumper.1.0.0.12.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",

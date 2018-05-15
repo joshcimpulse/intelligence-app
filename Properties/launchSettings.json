@@ -2,16 +2,20 @@
   "iisSettings": {
     "windowsAuthentication": true,
     "anonymousAuthentication": false,
+    "iis": {
+      "applicationUrl": "http://localhost/reportApp",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:4704/",
-      "sslPort": 0
+      "sslPort": 44346
     }
   },
   "profiles": {
     "iisExpress": {
-      "commandName": "Project",
+      "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "default",
+      "launchUrl": "SalesReportInterface/SelectParam",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

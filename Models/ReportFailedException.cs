@@ -7,6 +7,7 @@ namespace reportApp.Models
 {
     public class ReportFailedException : Exception
     {
+        /*
         public ReportFailedException()
         {
 
@@ -22,5 +23,6 @@ namespace reportApp.Models
 
 
         }
+        */
     }
 }

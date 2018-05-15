@@ -47,13 +47,13 @@ namespace reportApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
+            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=SalesReportInterface}/{action=SelectParam}/{id?}");
+                    template: "{controller=SalesReportInterface}/{action=SelectParam}");
             });
         }
     }

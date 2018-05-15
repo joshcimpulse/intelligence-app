@@ -10,6 +10,7 @@ namespace reportApp.Controllers
     public class SalesReportInterfaceController : Controller
     {
 
+
         public IActionResult SelectParam()
         {
             return View();

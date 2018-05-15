@@ -15,7 +15,7 @@ namespace reportApp.Models
         Top level method of building reports. Responsible for rangifying the begin/end dates, iterating
         over this range and retrieving SaleDays asynchronously.
 
-         */
+
 
 
         public SalesReport(DateTime beginDate, DateTime endDate)
@@ -25,16 +25,17 @@ namespace reportApp.Models
 
 
         }
-
+         */
         /*
         
          Task for asynchronously querying and constructing SaleDay instances for the report SaleDay list
          
-        */
+
         public async Task<List<SaleDay>> retrieveReportData()
         {
 
 
         }
+        */
     }
 }
