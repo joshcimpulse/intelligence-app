@@ -3,5 +3,173 @@
     ViewData["Title"] = "Report";
 }
 
-<h2>Report</h2>
+<h1>Automated Sales Report</h1>
+<h2>User:  @User.Identity.Name.ToString()</h2>
 
+<br /><br />
+      <div class="container">
+          <div class="row">
+              <h3 style=" text-align: left">Sales by Invoice Date</h3>
+          </div>
+          <div class="row">
+              <br\></br\>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div id="chart1"></div>
+                  </div>
+                  <div class="col-md-6" style="margin-top: 30px">
+                      <div class="row">
+                          <h4 style="margin-left: 50px;">Ranking by Day</h4>
+                       </div>
+                      <div class="row">
+                          <table class="table" id="SBDtable" style="margin-left: 50px; margin-top: 10px">
+                              <tr>
+                                  <th>Date</th>
+                                  <th>Net Sales</th>
+                                  <th> $GP</th>
+                                  <th> %GP</th>
+
+                              </tr>
+                              <tr>
+                                  <td>2017/04/23</td>
+                                  <td>$305.34</td>
+                                  <td>$60</td>
+                                  <td>%25.52</td>
+                              </tr>
+                              <tr>
+                                  <td>2017/04/15</td>
+                                  <td>$2340.34</td>
+                                  <td>$555</td>
+                                  <td>%28.65</td>
+                              </tr>
+                              <tr>
+                                  <td>2017/04/4</td>
+                                  <td>$708.34</td>
+                                  <td>$100.54</td>
+                                  <td>%21.52</td>
+                              </tr>
+
+
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6 pull-left">
+                  <div class="row">
+                      <h3 style=" text-align: left">Customer Breakdown</h3>
+                  </div>
+
+                  <div class="row">
+
+                      <div id="chart2"></div>
+                  </div>
+
+              </div>
+              <div class="col-md-6 pull-left">
+                  <div class="row">
+                      <h3 style=" text-align: left">Product Breakdown</h3>
+                  </div>
+
+                  <div class="row">
+
+                      <div id="chart3"></div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+    @section scripts{
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script ty>
+            $(document).ready(function () {
+
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var c1option = {
+                        title: 'Sales Invoiced vs Date',
+                        width: 500,
+                        height: 400,
+                        chartArea: { left: 0}
+                    };
+
+                    // Line Chart:
+                    arr = [];
+                    arr.push(['x', 'sin(x)', 'cos(x)', 'sin(x)^2']);
+                    for (var i = 0; i < 70; i++) {
+                        var x = 0.1 * i;
+                        arr.push([x, Math.sin(x), Math.cos(x), Math.sin(x) * Math.sin(x)]);
+                    }
+                    data = google.visualization.arrayToDataTable(arr, false);
+                    var chart1 = new google.visualization.LineChart(document.getElementById('chart1'));
+                    chart1.draw(data, c1option);
+
+
+                    //Pie graph
+                    var data2 = new google.visualization.DataTable();
+                    var rawData = [
+                        ['Soc. Sec. Tax', { v: 30, f: '30%' }],
+                        ['Income Tax', { v: 35, f: '35%' }],
+                        ['Borrowing', { v: 15, f: '15%' }],
+                        ['Corp. Tax', { v: 12, f: '12%' }],
+                        ['Misc', { v: 8, f: '8%' }]
+                    ];
+                    data2.addColumn('string', 'Tax Type');
+                    data2.addColumn('number', 'Tax Percentage');
+                    data2.addRows(rawData);
+                    var c2option = {
+                        title: 'Tax Structure in US',
+                        width: 500,
+                        height: 400,
+                        chartArea: { left: "0" }
+                    };
+
+                    //3D Pie Chart:
+                    c2option.is3D = true;
+                    chart2 = new google.visualization.PieChart(document.getElementById('chart2'));
+                    chart2.draw(data2, c2option);
+    
+                    // Exploded Pie Chart:
+                    c2option.is3D = false;
+                    c2option.slices = {
+                        1: { offset: 0.3 },
+                        3: { offset: 0.5 }
+                    };
+
+
+                    var data3 = google.visualization.arrayToDataTable([
+                        ['City', '2010 Population',],
+                        ['New York City, NY', 8175000],
+                        ['Los Angeles, CA', 3792000],
+                        ['Chicago, IL', 2695000],
+                        ['Houston, TX', 2099000],
+                        ['Philadelphia, PA', 1526000]
+                    ]);
+
+                    var c3options = {
+                        title: 'Population of Largest U.S. Cities',
+                        chartArea: { width: '50%' },
+                        hAxis: {
+                            title: 'Total Population',
+                            minValue: 0
+                        },
+                        vAxis: {
+                            title: 'City'
+                        }
+                    };
+
+                    var chart3 = new google.visualization.BarChart(document.getElementById('chart3'));
+
+                    chart3.draw(data3, c3options);
+                    
+
+                }
+            });
+        </script>
+    }
