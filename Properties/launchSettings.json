@@ -15,7 +15,7 @@
     "iisExpress": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "SalesReportInterface/SelectParam",
+      "launchUrl": "Home/Index",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -8,6 +8,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Server.IISIntegration;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using System.Net;
 
 namespace reportApp
 {
@@ -29,8 +32,18 @@ namespace reportApp
 
            });
 
+
             services.AddAuthentication(IISDefaults.AuthenticationScheme);
             services.AddAuthorization();
+            services.AddSingleton<IAppAuthorizationService, reportApp.AppAuthorizationService>();
+            services.AddSingleton<IAuthorizationHandler, IsAdminHandler>();
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("IsAdminRequirement", policyIsAdminRequirement =>
+                {
+                    policyIsAdminRequirement.Requirements.Add(new IsAdminRequirement());
+                });
+            });
             services.AddMvc();
 
         }
@@ -47,6 +60,15 @@ namespace reportApp
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseStatusCodePages(async context => {
+                var response = context.HttpContext.Response;
+
+                if (response.StatusCode == (int)HttpStatusCode.Unauthorized ||
+                    response.StatusCode == (int)HttpStatusCode.Forbidden)
+                {
+                    response.Redirect("/Home/NotAuthorized");
+                }
+            });
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseMvc(routes =>
@@ -55,6 +77,7 @@ namespace reportApp
                     name: "default",
                     template: "{controller=SalesReportInterface}/{action=SelectParam}");
             });
+
         }
     }
 }

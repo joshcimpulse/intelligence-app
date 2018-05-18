@@ -5,15 +5,10 @@ using System.Threading.Tasks;
 
 namespace reportApp.Models
 {
-    public class SaleLine
+    public class InvoiceLine
     {
-        public string stockCode;
-        public string stockDescription;
-        public float orderQty;
-        public float unitPrice;
-        public float unitCost;
-        public float lineGP;
-
+        public string stockCode, customerCode, customerName;
+        public float value, gp;
 
         /*
         

@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace reportApp.Models
 {
-    public class SaleDay
+    public class SaleDayRecord
     {
         public string salesPerson;
         public DateTime date;
-        public List<Sale> saleList;
-        public float totalVolume;
+        public List<InvoiceLine> lines;
+        public float netSales;
         public float totalGP;
 
         /*

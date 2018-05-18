@@ -32,7 +32,11 @@ namespace reportApp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult NotAuthorized()
+        {
+            return View();
 
+        }
         public void getContext(HttpContext context){
             /**
             var id = (WindowsIdentity)(context.User.Identity);

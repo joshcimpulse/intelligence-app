@@ -7,11 +7,11 @@
     <h2>Select Date Parameters</h2>
 
     <p>Please select a year and month for your automated sales report.</p>
-    <form id="reportParameters" onsubmit= "window.location = '@Url.Action("Report", "SalesReportInterface")'; return false;">
+    <form id="reportParameters" action= "@Url.Action("Report", "SalesReportInterface")" method="post">
         <div class="row">
             <div class="col-md-2">
                 <label>Select Year</label>
-                <select id="yearSelect">
+                <select id="reportYear" name="reportYear">
                     @for (var i = 2005; i <= (int)DateTime.Now.Year; i++)
                     {
                     <option value="@i">@i</option>
@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-2">
                 <label>Select Month</label>
-                <select id="monthSelect">
+                <select id="reportMonth" name="reportMonth">
                     <option value="January">January</option>
                     <option value="February">February</option>
                     <option value="March">March</option>
@@ -37,10 +37,8 @@
                 </select>
             </div>
         </div>
-
         <br /> <br />
-
-        <button id="submit">Submit</button>
+        <input type ="submit"  />
     </form>
 </div>
 <br /> <br />
