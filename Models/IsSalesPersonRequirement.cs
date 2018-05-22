@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.AspNetCore.Authorization;
 namespace reportApp
 {
-    public interface IAppAuthorizationService
+    public class IsSalesPersonRequirement : IAuthorizationRequirement
     {
-        bool IsAdmin(string username);
-        bool IsSalesPerson(string username);
     }
 }

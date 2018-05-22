@@ -11,5 +11,9 @@ namespace reportApp
         {
             return RulesAdmin.IsAdmin(username);
         }
+        public bool IsSalesPerson(string username)
+        {
+            return RulesSalesPerson.IsSalesPerson(username);
+        }
     }
 }

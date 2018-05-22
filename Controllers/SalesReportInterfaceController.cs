@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace reportApp.Controllers
 
 {
-    [Authorize(Policy = "IsAdminRequirement")]
+ 
     public class SalesReportInterfaceController : Controller
     {
 
@@ -16,6 +16,7 @@ namespace reportApp.Controllers
         public string reportYear;
         public IActionResult SelectParam()
         {
+
 
             return View();
         }

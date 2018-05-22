@@ -1,6 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    @using Microsoft.AspNetCore.Authorization
+    @inject IAuthorizationService AuthorizationService
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Sales Report</title>
@@ -19,21 +21,41 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #053273">
-        <div class="row">
-            <p style="color: white;  padding-top: 10px; font-size: large; "><b>Internal Business Intelligence</b></p>
-
-        </div>
-        <div class="row">
-            <img src="https://drive.google.com/thumbnail?id=1OkLUj-kL0iPGCvcLFQQhJjtaw6w3vgoq">
-
-        </div>
-
-    </nav>
-    <br><br>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <div class="row" style="background-color: #053273;padding-bottom: -30px">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-5">
+            <div class="row" style="padding-top:20px">
+                <img src="https://drive.google.com/thumbnail?id=1OkLUj-kL0iPGCvcLFQQhJjtaw6w3vgoq">
+            </div>
+            <div class="row">
+                <p style="color: white;  padding-top: 10px; font-size: x-large; "><b>Impulse Toolkit</b></p>
+            </div>
+        </div>
 
+        <div class="col-lg-2" style="padding-top:20px;">
 
+            <div class="row">
+                <p style="color: white;  padding-top: 10px; font-size: medium; "><b>User:</b> @User.Identity.Name.ToString()</p>
+            </div>
+            @if ((await AuthorizationService.AuthorizeAsync(User, "IsAdminRequirement")).Succeeded)
+            {
+                <div class="row">
+                    <p style="color: white;  padding-top: 5px; font-size: medium; "><b>Role:</b> Admin/Manager</p>
+                </div>
+            }
+            else if ((await AuthorizationService.AuthorizeAsync(User, "IsSalesPersonRequirement")).Succeeded)
+            {
+                <div class="row">
+                    <p style="color: white;  padding-top: 5px; font-size: medium; "><b>Role:</b> Sales Person</p>
+                </div>
+
+            }
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+    <br /><br />
+    <br /><br />
     <div class="container body-content">
         @RenderBody()
         <hr />

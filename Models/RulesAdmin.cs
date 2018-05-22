@@ -7,7 +7,7 @@ namespace reportApp
 {
     public static class RulesAdmin
     {
-
+        
         private static List<string> adminUsers = new List<string>();
 
         private static List<string> adminProviders = new List<string>();
@@ -16,6 +16,7 @@ namespace reportApp
         {
             if (adminUsers.Count == 0)
             {
+                
                 AddAllowedUsers();
 
             }
@@ -30,6 +31,7 @@ namespace reportApp
 
         private static void AddAllowedUsers()
         {
+
             adminUsers.Add("IMPULSETECH\\jcaravaggio");
         }
 

@@ -2,23 +2,28 @@
 @{
     ViewData["Title"] = "Select Report Month" +
                 "";
+
 }
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
 <div class="container">
+
+
     <h2>Select Date Parameters</h2>
 
     <p>Please select a year and month for your automated sales report.</p>
-    <form id="reportParameters" action= "@Url.Action("Report", "SalesReportInterface")" method="post">
+    <form id="reportParameters" action="@Url.Action("Report", "SalesReportInterface")" method="post">
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label>Select Year</label>
                 <select id="reportYear" name="reportYear">
                     @for (var i = 2005; i <= (int)DateTime.Now.Year; i++)
-                    {
-                    <option value="@i">@i</option>
-                    }
+            {
+                <option value="@i">@i</option>
+    }
                 </select>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label>Select Month</label>
                 <select id="reportMonth" name="reportMonth">
                     <option value="January">January</option>
@@ -36,9 +41,20 @@
 
                 </select>
             </div>
+            @if ((await AuthorizationService.AuthorizeAsync(User, "IsAdminRequirement")).Succeeded)
+            {
+
+            <div class="col-md-3">
+                <label>Select Sales Person</label>
+                <select id="salesPerson" name="salesPerson">
+
+                </select>
+            </div>
+            }
+
         </div>
         <br /> <br />
-        <input type ="submit"  />
+        <input type="submit" />
     </form>
 </div>
 <br /> <br />

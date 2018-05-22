@@ -37,13 +37,20 @@ namespace reportApp
             services.AddAuthorization();
             services.AddSingleton<IAppAuthorizationService, reportApp.AppAuthorizationService>();
             services.AddSingleton<IAuthorizationHandler, IsAdminHandler>();
+            services.AddSingleton<IAuthorizationHandler, IsSalesPersonHandler>();
             services.AddAuthorization(options =>
             {
+                options.AddPolicy("IsSalesPersonRequirement", policyIsSalesPersonRequirement =>
+                {
+                    policyIsSalesPersonRequirement.Requirements.Add(new IsSalesPersonRequirement());
+                });
                 options.AddPolicy("IsAdminRequirement", policyIsAdminRequirement =>
                 {
                     policyIsAdminRequirement.Requirements.Add(new IsAdminRequirement());
                 });
+
             });
+
             services.AddMvc();
 
         }
